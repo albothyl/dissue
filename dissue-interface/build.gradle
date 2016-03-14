@@ -1,0 +1,15 @@
+apply plugin: 'war'
+
+war {
+    baseName = 'dissue'
+    version = '0.0.1-SNAPSHOT'
+}
+
+dependencies {
+    compile project(':dissue-domain')
+
+    compile("org.springframework:spring-webmvc:${springVersion}")
+    compile("org.springframework:spring-web:${springVersion}")
+
+    compile("javax.servlet:javax.servlet-api:${servletVersion}")
+}

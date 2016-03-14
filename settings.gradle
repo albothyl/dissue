@@ -1,2 +1,3 @@
 rootProject.name = 'dissue'
+include 'dissue-interface', 'dissue-domain'
 

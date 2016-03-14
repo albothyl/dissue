@@ -1,86 +1,63 @@
-buildscript {
-    ext {
-        springBootVersion = '1.3.3.RELEASE'
-    }
+ext {
+//  Root
+    springVersion = '4.2.5.RELEASE'
+//  Interface
+    servletVersion = '3.1.0'
+//  Domain
+    springDataJpaVersion = '1.9.4.RELEASE'
+    hibernateVersion = '5.1.0.Final'
+    hibernateJpaVersion = '1.0.0.Final'
+    jadiraUserTypeVersion = '5.0.0.GA'
+    mysqlConnectorVersion = '5.1.38'
+//  Logging
+    slf4jVersion = '1.7.18'
+    logbackVersion = '1.1.6'
+//  Other
+    lombokVersion = '1.16.6'
+    guavaVersion = '19.0'
+    jodaTimeVersion = '2.3'
+//  Test
+    spockVersion = '1.0-groovy-2.4'
+    junitVerison = '4.11'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+    apply plugin: 'eclipse'
+    apply plugin: 'eclipse-wtp'
+    apply plugin: 'idea'
+
     repositories {
         mavenCentral()
     }
+
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath('io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE')
+        compile("org.springframework:spring-core:${springVersion}") {
+            exclude group: 'commons-logging'
+        }
+        compile("org.springframework:spring-context:${springVersion}")
+        compile("org.springframework:spring-aspects:${springVersion}")
+
+        compile("org.slf4j:slf4j-api:${slf4jVersion}")
+        runtime("org.slf4j:jcl-over-slf4j:${slf4jVersion}")
+        runtime("ch.qos.logback:logback-classic:${logbackVersion}")
+
+        compile("org.projectlombok:lombok:${lombokVersion}")
+        compile("com.google.guava:guava:${guavaVersion}")
+        compile("joda-time:joda-time:${jodaTimeVersion}")
+
+        testCompile("org.spockframework:spock-core:${spockVersion}")
+        testCompile("org.spockframework:spock-spring:${spockVersion}")
+        testCompile("org.springframework:spring-test:${springVersion}")
+        testCompile("junit:junit:${junitVerison}")
+    }
+
+    version '1.0-SNAPSHOT'
+
+    task wrapper(type: Wrapper) {
+        gradleVersion = '2.9'
     }
 }
 
-group 'private'
-version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
-apply plugin: 'groovy' //추가하지 않으면 gradle reflash할때마다 spock mark가 깨짐
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply plugin: 'eclipse-wtp'
-apply plugin: 'war'
-apply plugin: 'idea'
-apply plugin: 'spring-boot'
-apply plugin: 'io.spring.dependency-management'
-
-war {
-    baseName = 'superboard'
-    version = '0.0.1-SNAPSHOT'
-}
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
-configurations {
-    providedRuntime
-}
-
-def springVersion = '4.2.5.RELEASE'
-
-dependencies {
-    compile("org.springframework:spring-core:${springVersion}") {
-        exclude group: 'commons-logging'
-    }
-    compile("org.springframework:spring-webmvc:${springVersion}")
-    compile("org.springframework:spring-web:${springVersion}")
-    compile("org.springframework:spring-orm:${springVersion}")
-    compile("org.springframework:spring-tx:${springVersion}")
-    compile("org.springframework:spring-aspects:${springVersion}")
-
-
-    compile('org.springframework.data:spring-data-jpa:1.9.4.RELEASE')
-    compile('org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final')
-    compile('org.hibernate:hibernate-entitymanager:5.1.0.Final')
-    compile('org.hibernate:hibernate-core:5.1.0.Final')
-    compile('org.jadira.usertype:usertype.core:5.0.0.GA')
-    compile('mysql:mysql-connector-java')
-
-    compile('javax.servlet:javax.servlet-api:3.1.0')
-
-    compile('org.slf4j:slf4j-api:1.7.18')
-    runtime('org.slf4j:jcl-over-slf4j:1.7.18')
-    runtime('ch.qos.logback:logback-classic:1.1.6')
-
-    testCompile('org.spockframework:spock-core:1.0-groovy-2.4')
-    testCompile('org.spockframework:spock-spring:1.0-groovy-2.4')
-    testCompile("org.springframework:spring-test:${springVersion}")
-
-    compile('org.projectlombok:lombok:1.16.6')
-    compile('com.google.guava:guava:19.0')
-    compile('joda-time:joda-time:2.3')
-}
-
-eclipse {
-    classpath {
-        containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-        containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
-    }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.9'
-}

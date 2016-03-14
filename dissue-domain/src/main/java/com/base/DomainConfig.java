@@ -1,4 +1,4 @@
-package com.base.config;
+package com.base;
 
 import com.base.domain.BaseDomain;
 import org.springframework.beans.factory.annotation.Autowired;

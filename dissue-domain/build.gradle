@@ -1,0 +1,13 @@
+dependencies {
+    compile("org.springframework:spring-orm:${springVersion}")
+    compile("org.springframework:spring-tx:${springVersion}")
+    compile("org.springframework.data:spring-data-jpa:${springDataJpaVersion}")
+
+    compile("org.hibernate:hibernate-core:${hibernateVersion}")
+    compile("org.hibernate:hibernate-entitymanager:${hibernateVersion}")
+    compile("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:${hibernateJpaVersion}")
+
+    compile("org.jadira.usertype:usertype.core:${jadiraUserTypeVersion}")
+
+    compile("mysql:mysql-connector-java:${mysqlConnectorVersion}")
+}

@@ -1,4 +1,4 @@
-import com.base.config.DomainConfig
+import com.base.DomainConfig
 import com.base.domain.Base
 import com.base.domain.BaseRepository
 import org.springframework.beans.factory.annotation.Autowired
