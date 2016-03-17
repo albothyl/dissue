@@ -6,10 +6,17 @@ war {
 }
 
 dependencies {
+    // Domain =====================================================
     compile project(':dissue-domain')
 
+    // Spring =====================================================
     compile("org.springframework:spring-webmvc:${springVersion}")
     compile("org.springframework:spring-web:${springVersion}")
 
+    // Servlet ====================================================
     compile("javax.servlet:javax.servlet-api:${servletVersion}")
+
+    // Template engine
+    compile("org.webjars.bower:angular:${angularVersion}")
+    compile("com.github.jknack:handlebars-springmvc:${handelbarViewResolverVersion}")
 }

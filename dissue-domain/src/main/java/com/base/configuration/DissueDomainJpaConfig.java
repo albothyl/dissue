@@ -1,4 +1,4 @@
-package com.base;
+package com.base.configuration;
 
 import com.base.domain.BaseDomain;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ import java.util.Properties;
 @EnableTransactionManagement
 @PropertySource("classpath:dataSource/develop.xml")
 @ComponentScan(basePackageClasses = { BaseDomain.class })
-public class DomainConfig {
+public class DissueDomainJpaConfig {
 	@Autowired
 	private Environment environment;
 

@@ -1,25 +1,29 @@
 ext {
-//  Root
+//  Root ==================================
     springVersion = '4.2.5.RELEASE'
-//  Interface
+//  Interface =============================
     servletVersion = '3.1.0'
-//  Domain
+//  Template
+    angularVersion = '1.5.0'
+    handelbarViewResolverVersion = '4.0.4'
+//  Domain ================================
     springDataJpaVersion = '1.9.4.RELEASE'
     hibernateVersion = '5.1.0.Final'
     hibernateJpaVersion = '1.0.0.Final'
     jadiraUserTypeVersion = '5.0.0.GA'
     mysqlConnectorVersion = '5.1.38'
-//  Logging
+//  Logging ===============================
     slf4jVersion = '1.7.18'
     logbackVersion = '1.1.6'
-//  Other
+//  Other =================================
     lombokVersion = '1.16.6'
     guavaVersion = '19.0'
     jodaTimeVersion = '2.3'
-//  Test
+//  Test ==================================
     spockVersion = '1.0-groovy-2.4'
     junitVerison = '4.11'
 }
+
 
 subprojects {
     apply plugin: 'java'
@@ -33,20 +37,24 @@ subprojects {
     }
 
     dependencies {
+        // Spring =====================================================
         compile("org.springframework:spring-core:${springVersion}") {
             exclude group: 'commons-logging'
         }
         compile("org.springframework:spring-context:${springVersion}")
         compile("org.springframework:spring-aspects:${springVersion}")
 
+        // Logging ====================================================
         compile("org.slf4j:slf4j-api:${slf4jVersion}")
         runtime("org.slf4j:jcl-over-slf4j:${slf4jVersion}")
         runtime("ch.qos.logback:logback-classic:${logbackVersion}")
 
+        // Other ======================================================
         compile("org.projectlombok:lombok:${lombokVersion}")
         compile("com.google.guava:guava:${guavaVersion}")
         compile("joda-time:joda-time:${jodaTimeVersion}")
 
+        // Test =======================================================
         testCompile("org.spockframework:spock-core:${spockVersion}")
         testCompile("org.spockframework:spock-spring:${spockVersion}")
         testCompile("org.springframework:spring-test:${springVersion}")

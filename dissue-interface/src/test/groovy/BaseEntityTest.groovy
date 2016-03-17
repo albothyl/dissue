@@ -1,4 +1,6 @@
-import com.base.DomainConfig
+
+
+import com.base.configuration.DissueDomainJpaConfig
 import com.base.domain.Base
 import com.base.domain.BaseRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -7,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional
 import spock.lang.Specification
 
 @Transactional
-@ContextConfiguration(classes = [DomainConfig])
+@ContextConfiguration(classes = [DissueDomainJpaConfig])
 class BaseEntityTest extends Specification {
 	@Autowired
 	def BaseRepository baseRepository
