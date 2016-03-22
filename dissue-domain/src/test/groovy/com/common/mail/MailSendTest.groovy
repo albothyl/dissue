@@ -1,5 +1,6 @@
 package com.common.mail
 
+import com.base.configuration.DissueJavaMailConfiguration
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.transaction.annotation.Transactional
@@ -9,8 +10,7 @@ import spock.lang.Specification
  * Created by jinhyung on 2016. 3. 22..
  */
 @Transactional
-@ContextConfiguration
-//@ContextConfiguration(classes = [DissueDomainJpaConfig])
+@ContextConfiguration(classes = [DissueJavaMailConfiguration])
 class MailSendTest extends Specification{
 
     @Autowired
