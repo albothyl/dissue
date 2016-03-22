@@ -4,6 +4,9 @@ dependencies {
     compile("org.springframework:spring-tx:${springVersion}")
     compile("org.springframework.data:spring-data-jpa:${springDataJpaVersion}")
 
+    compile("org.springframework.boot:spring-boot-starter-mail:1.3.3.RELEASE")
+
+
     // Hibernate ===========================================================================
     compile("org.hibernate:hibernate-core:${hibernateVersion}")
     compile("org.hibernate:hibernate-entitymanager:${hibernateVersion}")
