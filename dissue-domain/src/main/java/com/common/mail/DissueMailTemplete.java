@@ -2,6 +2,7 @@ package com.common.mail;
 
 import com.util.mail.DissueMailManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -10,6 +11,7 @@ import java.util.Optional;
  * Created by jinhyung on 2016. 3. 22..
  */
 @Component
+@ComponentScan
 public class DissueMailTemplete {
 
     @Autowired

@@ -2,6 +2,7 @@ package com.util.mail;
 
 import com.util.mail.core.JinhyungJavaMailSenderImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import javax.mail.MessagingException;
@@ -11,6 +12,7 @@ import java.util.Optional;
  * Created by jinhyung on 2016. 3. 22..
  */
 @Component
+@ComponentScan
 public class DissueMailManager {
 
     private static final String DEFAULT_DEHAUS_MAIL_ADDRESS = "haneu89@naver.com";
