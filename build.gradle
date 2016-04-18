@@ -19,9 +19,12 @@ ext {
     lombokVersion = '1.16.6'
     guavaVersion = '19.0'
     jodaTimeVersion = '2.3'
+    javaMailApiVersion = '1.4.7'
+    commonsLang3Version = '3.4'
 //  Test ==================================
     spockVersion = '1.0-groovy-2.4'
     junitVerison = '4.11'
+    randomBeansVersion = '2.0.0'
 }
 
 
@@ -53,11 +56,15 @@ subprojects {
         compile("org.projectlombok:lombok:${lombokVersion}")
         compile("com.google.guava:guava:${guavaVersion}")
         compile("joda-time:joda-time:${jodaTimeVersion}")
+        compile("org.apache.commons:commons-lang3:${commonsLang3Version}")
+
 
         // Test =======================================================
         testCompile("org.spockframework:spock-core:${spockVersion}")
         testCompile("org.spockframework:spock-spring:${spockVersion}")
         testCompile("org.springframework:spring-test:${springVersion}")
+        testCompile "io.github.benas:random-beans:${randomBeansVersion}"
+        testCompile "io.github.benas:random-beans-jodatime:${randomBeansVersion}"
         testCompile("junit:junit:${junitVerison}")
     }
 

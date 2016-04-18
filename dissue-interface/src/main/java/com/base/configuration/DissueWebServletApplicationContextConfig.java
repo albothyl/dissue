@@ -1,6 +1,6 @@
 package com.base.configuration;
 
-import com.base.application.DissueApplication;
+import com.base.interfaces.DissueInterfaces;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { DissueApplication.class })
+@ComponentScan(basePackageClasses = { DissueInterfaces.class })
 public class DissueWebServletApplicationContextConfig extends WebMvcConfigurationSupport {
 
 	@Override

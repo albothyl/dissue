@@ -16,6 +16,9 @@ dependencies {
     // Servlet ====================================================
     compile("javax.servlet:javax.servlet-api:${servletVersion}")
 
+    // Mail =======================================================
+    compile("javax.mail:mail:${javaMailApiVersion}")
+
     // Template engine
     compile("org.webjars.bower:angular:${angularVersion}")
     compile("com.github.jknack:handlebars-springmvc:${handelbarViewResolverVersion}")

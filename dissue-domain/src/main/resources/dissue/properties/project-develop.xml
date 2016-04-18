@@ -3,7 +3,7 @@
 <properties>
     <comment>dataSource - develop</comment>
     <!-- mysql parttimejob connect parameter -->
-    <entry key="base.mysql.jdbc.url">jdbc:mysql://127.0.0.1:3306/bangbeae?useUnicode=true&amp;characterEncoding=UTF8</entry>
+    <entry key="base.mysql.jdbc.url">jdbc:mysql://albothyldb.cmgl30skwqmo.ap-northeast-2.rds.amazonaws.com:3306/bangbeae?useUnicode=true&amp;characterEncoding=UTF8</entry>
     <entry key="base.mysql.jdbc.username">bangbeae</entry>
     <entry key="base.mysql.jdbc.password">1q2w3e!@</entry>
 
@@ -17,4 +17,8 @@
     <!-- AuditingEntityListener parameter -->
     <entry key="jadira.usertype.autoRegisterUserTypes">true</entry>
     <entry key="jadira.usertype.databaseZone">jvm</entry>
+
+    <!-- mail send SMTPAuthenticator -->
+    <entry key="mail.smtp.authenticator.username">jjhwqqq5@gmail.com</entry>
+    <entry key="mail.smtp.authenticator.password">hhxkxfgypvgeppqj</entry>
 </properties>

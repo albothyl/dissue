@@ -1,6 +1,5 @@
 package com.base.domain;
 
-import com.base.share.AbstractEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.joda.time.DateTime;

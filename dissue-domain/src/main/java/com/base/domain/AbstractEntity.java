@@ -1,4 +1,4 @@
-package com.base.share;
+package com.base.domain;
 
 import lombok.Getter;
 import org.springframework.data.domain.Persistable;
