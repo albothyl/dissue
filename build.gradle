@@ -16,7 +16,7 @@ ext {
     slf4jVersion = '1.7.18'
     logbackVersion = '1.1.6'
 //  Other =================================
-    lombokVersion = '1.16.6'
+    lombokVersion = '1.16.8'
     guavaVersion = '19.0'
     jodaTimeVersion = '2.3'
     javaMailApiVersion = '1.4.7'
