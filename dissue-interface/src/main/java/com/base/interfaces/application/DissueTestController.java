@@ -1,5 +1,6 @@
 package com.base.interfaces.application;
 
+import com.base.domain.Base;
 import com.base.domain.BaseRepository;
 import com.base.interfaces.share.mail.Mail;
 import com.base.interfaces.share.mail.MailSender;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -26,8 +28,8 @@ public class DissueTestController {
 		ModelAndView mav = new ModelAndView("index");
 		log.info("come in indexController");
 
-//		List<Base> baseList = repository.findAll();
-//		mav.addObject("base", baseList.get(0));
+		List<Base> baseList = repository.findAll();
+		mav.addObject("base", baseList.get(0));
 
 		mailSender.send(generateMail());
 
