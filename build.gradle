@@ -1,6 +1,7 @@
 ext {
 //  Root ==================================
     springVersion = '4.2.5.RELEASE'
+    securityVersion = '4.0.4.RELEASE'
 //  Interface =============================
     servletVersion = '3.1.0'
 //  Template

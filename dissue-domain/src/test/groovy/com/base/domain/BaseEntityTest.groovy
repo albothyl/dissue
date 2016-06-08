@@ -7,12 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.transaction.annotation.Transactional
-import spock.lang.Ignore
 import spock.lang.Specification
 
-@Ignore
 @Transactional
-@ActiveProfiles(profiles = DissueProfiles.LOCAL)
+@ActiveProfiles(profiles = DissueProfiles.KANBAN)
 @ContextConfiguration(initializers = ConfigurationPropertiesApplicationContextInitializer, classes = [DissueDomainJpaConfig])
 class BaseEntityTest extends Specification {
 	@Autowired

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>dataSource - develop</comment>
+    <!-- mysql parttimejob connect parameter -->
+    <entry key="base.mysql.jdbc.url">jdbc:mysql://127.0.0.1:3306/kanban?useUnicode=true&amp;characterEncoding=UTF8</entry>
+    <entry key="base.mysql.jdbc.username">root</entry>
+    <entry key="base.mysql.jdbc.password">1q2w3e</entry>
+
+    <!-- hibernate parameter -->
+    <entry key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</entry>
+    <entry key="hibernate.show_sql">true</entry>
+    <entry key="hibernate.format_sql">true</entry>
+    <entry key="hibernate.hbm2ddl.auto">validate</entry>
+    <entry key="hibernate.ejb.naming_strategy">org.hibernate.cfg.DefaultNamingStrategy</entry>
+
+    <!-- AuditingEntityListener parameter -->
+    <entry key="jadira.usertype.autoRegisterUserTypes">true</entry>
+    <entry key="jadira.usertype.databaseZone">jvm</entry>
+
+    <!-- mail send SMTPAuthenticator -->
+    <entry key="mail.smtp.authenticator.username">jjhwqqq5@gmail.com</entry>
+    <entry key="mail.smtp.authenticator.password">hhxkxfgypvgeppqj</entry>
+</properties>

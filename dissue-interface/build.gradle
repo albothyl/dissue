@@ -13,6 +13,11 @@ dependencies {
     compile("org.springframework:spring-webmvc:${springVersion}")
     compile("org.springframework:spring-web:${springVersion}")
 
+    // Security
+     compile("org.springframework.security:spring-security-core:${securityVersion}")
+     compile("org.springframework.security:spring-security-web:${securityVersion}")
+     compile("org.springframework.security:spring-security-config:${securityVersion}")
+
     // Servlet ====================================================
     compile("javax.servlet:javax.servlet-api:${servletVersion}")
 
